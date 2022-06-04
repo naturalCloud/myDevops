@@ -1,0 +1,47 @@
+version: '3.0'
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: php.Dockerfile
+    container_name: app-fpm
+    volumes:
+      - ./:/var/www/laravel
+    depends_on:
+      - app-mysql
+      - app-redis
+    environment:
+      - DB_HOST=app-mysql
+      - REDIS_HOST=app-redis
+
+  app-nginx:
+    build:
+      context: ./
+      dockerfile: nginx.Dockerfile
+    container_name: app-nginx
+    volumes:
+      - ./:/var/www/laravel
+    ports:
+      - "8082:80"
+    depends_on:
+      - app
+
+  app-redis:
+    build:
+      context: ./
+      dockerfile: redis.Dockerfile
+    container_name: app-redis
+
+  app-mysql:
+    build:
+      context: ./
+      dockerfile: mysql.Dockerfile
+    container_name: app-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - /home/zhangshuai/.mysql8/data:/var/lib/mysql
+      - /home/zhangshuai/.mysql8/conf:/etc/mysql
+      - /home/zhangshuai/.mysql8/logs:/var/log/mysql
+      - /home/zhangshuai/.mysql8/mysql-files:/var/lib/mysql-files
+
