@@ -1,0 +1,20 @@
+version: '3.0'
+services:
+  app-esayswoole:
+    build:
+      context: ./
+      dockerfile: php.Dockerfile
+    container_name: app-esayswoole
+    volumes:
+      - /mnt/hgfs/project/php:/var/www/php
+    working_dir: /var/www/php
+    ports:
+      - "9501:9501"
+
+#  app-redis:
+#    build:
+#      context: ./
+#      dockerfile: redis.Dockerfile
+#    container_name: app-redis
+
+
