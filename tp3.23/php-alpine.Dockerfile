@@ -12,4 +12,4 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 
 
 RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions bcmath pdo_mysql pdo_sqlite memcache memcached mysqli mysqlnd redis  zip  mongodb msgpack exif mycrypt  yac
+    install-php-extensions bcmath pdo_mysql pdo_sqlite memcache memcached mysqli mysqlnd redis  zip  mongodb msgpack exif mycrypt

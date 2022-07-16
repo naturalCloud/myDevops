@@ -1,4 +1,4 @@
-FROM  php:5.6-zts-jessie
+FROM  amd64/php:5.6-fpm-jessie
 
 
 
@@ -20,4 +20,7 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 RUN  chmod +x /usr/local/bin/install-php-extensions
 
 RUN     install-php-extensions bcmath pdo_mysql pdo_sqlite memcache memcached mysqli mysqlnd redis  zip  mongodb msgpack exif  mcrypt
+
+RUN docker-php-ext-install opcache
+
 
