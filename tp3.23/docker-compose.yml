@@ -1,24 +1,12 @@
 version: '3.0'
 services:
-  app-tp3.23:
+  php-tp3.23:
     build:
       context: ./
-      dockerfile: php.Dockerfile
-    container_name: app-fpm
-    volumes:
-      - ./:/var/www/laravel
-    depends_on:
-      - app-redis
+      dockerfile: php-debian.Dockerfile
+#      args:
+#        HTTPS_PROXY: "socks5://192.168.1.5:10808/"
+#        HTTP_PROXY: "socks5:/192.168.1.5:10808/"
+#        "NO_PROXY": "getcomposer.org"
 
-
-  app-nginx:
-    build:
-      context: ./
-      dockerfile: nginx.Dockerfile
-    container_name: app-nginx
-    volumes:
-      - ./:/var/www/laravel
-    ports:
-      - "8082:80"
-    depends_on:
-      - app
+    container_name: php-tp3.23
