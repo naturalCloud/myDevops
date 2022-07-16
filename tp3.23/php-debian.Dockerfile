@@ -3,6 +3,8 @@ FROM  php:5.6-zts-jessie
 
 
 
+
+
 # 阿里源
 
 RUN echo "deb http://mirrors.aliyun.com/debian jessie main contrib non-free" > /etc/apt/sources.list && \
@@ -15,10 +17,17 @@ RUN echo "deb http://mirrors.aliyun.com/debian jessie main contrib non-free" > /
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
+RUN  chmod +x /usr/local/bin/install-php-extensions
+
+RUN     install-php-extensions bcmath pdo_mysql pdo_sqlite memcache memcached mysqli mysqlnd redis  zip  mongodb msgpack exif  mcrypt
+
+
+
+ADD  https://github.com/lionsoul2014/ip2region/archive/refs/tags/v1.9.0-release.tar.gz /tmp/
 
 
 
 
-RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions bcmath pdo_mysql pdo_sqlite memcache memcached mysqli mysqlnd redis  zip  mongodb msgpack exif  mcrypt yac
+RUN tar xzf /tmp/v1.9.0-release.tar.gz -C /tmp
 
+RUN install-php-extensions /tmp/v1.9.0-release

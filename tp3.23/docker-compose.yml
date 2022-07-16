@@ -4,9 +4,9 @@ services:
     build:
       context: ./
       dockerfile: php-debian.Dockerfile
-#      args:
-#        HTTPS_PROXY: "socks5://192.168.1.5:10808/"
-#        HTTP_PROXY: "socks5:/192.168.1.5:10808/"
-#        "NO_PROXY": "getcomposer.org"
+      args:
+        HTTPS_PROXY: "socks5://192.168.1.5:10808/"
+        HTTP_PROXY: "socks5:/192.168.1.5:10808/"
+        "NO_PROXY": "getcomposer.org"
 
     container_name: php-tp3.23
