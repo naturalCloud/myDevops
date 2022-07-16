@@ -21,13 +21,3 @@ RUN  chmod +x /usr/local/bin/install-php-extensions
 
 RUN     install-php-extensions bcmath pdo_mysql pdo_sqlite memcache memcached mysqli mysqlnd redis  zip  mongodb msgpack exif  mcrypt
 
-
-
-ADD  https://github.com/lionsoul2014/ip2region/archive/refs/tags/v1.9.0-release.tar.gz /tmp/
-
-
-
-
-RUN tar xzf /tmp/v1.9.0-release.tar.gz -C /tmp
-
-RUN install-php-extensions /tmp/v1.9.0-release
