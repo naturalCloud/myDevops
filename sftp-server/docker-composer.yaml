@@ -1,0 +1,15 @@
+version: '3.0'
+services:
+  sftp-server:
+    build:
+      context: ./
+      dockerfile: sftp.Dockerfile
+    container_name: sftp-server
+    env_file:
+      - .env
+    volumes:
+      - ${HOST_DIR}:/home/${SFTP_USER}/upload
+    ports:
+      - '${HOST_PORT}:22'
+    command: ${SFTP_USER}:${PASSWORD}:${UID}
+
