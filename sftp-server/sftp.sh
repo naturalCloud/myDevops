@@ -17,6 +17,17 @@ docker-compose -f ./docker-composer.yaml config
 fi
 
 
+if [ $1  == 'stop' ]; then
+docker-compose -f ./docker-composer.yaml stop
+fi
+
+if [ $1  == 'restart' ]; then
+docker-compose -f ./docker-composer.yaml restart
+fi
+
+
+
+
 
 
 #docker-compose -f ./docker-composer.yaml up -d
