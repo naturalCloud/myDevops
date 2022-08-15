@@ -17,7 +17,7 @@ docker-compose -f ./docker-compose.yml config
 fi
 
 if [ $1 == 'stop' ]; then
-    docker-compose -f ./docker-compose.yml config
+    docker-compose -f ./docker-compose.yml stop
 fi
 
 
