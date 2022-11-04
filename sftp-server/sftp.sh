@@ -4,16 +4,20 @@
 export UID=$(id -u)
 
 if [ $1  == 'build' ]; then
-  docker-compose -f ./docker-composer.yaml build
+  docker-compose -f ./docker-compose.yml build
 fi
 
 if [ $1  == 'run' ]; then
-  docker-compose -f ./docker-composer.yaml up -d
+  docker-compose -f ./docker-compose.yml up -d
 fi
 
 
 if [ $1  == 'config' ]; then
-docker-compose -f ./docker-composer.yaml config
+docker-compose -f ./docker-compose.yml config
+fi
+
+if [ $1 == 'stop' ]; then
+    docker-compose -f ./docker-compose.yml stop
 fi
 
 
@@ -29,5 +33,4 @@ fi
 
 
 
-
-#docker-compose -f ./docker-composer.yaml up -d
+#docker-compose -f ./docker-compose.yml up -d
