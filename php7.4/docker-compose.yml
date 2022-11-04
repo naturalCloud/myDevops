@@ -1,0 +1,14 @@
+version: '3.0'
+services:
+  php74-demo:
+    build:
+      context: ./
+      dockerfile: php74.Dockerfile
+      args:
+        HTTPS_PROXY: "socks5://192.168.0.103:10808/"
+#        HTTPS_PROXY: "socks5://127.0.0.1:10808/"
+        HTTP_PROXY: "socks5:/192.168.0.103:10808/"
+#        HTTP_PROXY: "socks5:/127.0.0.1:10808/"
+        "NO_PROXY": "getcomposer.org"
+
+    container_name:  php74-demo
