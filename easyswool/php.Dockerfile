@@ -24,4 +24,9 @@ RUN pecl install redis \
 
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-        && composer config -g repo.packagist composer https://packagist.phpcomposer.com \
+        && composer config -g repo.packagist composer https://packagist.phpcomposer.com
+
+RUN  apt-get install -y  libboost-all-dev &&  cd && git clone https://github.com/swoole/yasd.git && cd yasd && phpize --clean && \
+       phpize && ./configure && make clean && make && make install && docker-php-ext-enable yasd
+
+RUN  apt-get install -y  zsh && chsh -s $(which zsh) && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

@@ -6,7 +6,7 @@ services:
       dockerfile: php.Dockerfile
     container_name: app-esayswoole
     volumes:
-      - /mnt/hgfs/project/php:/var/www/php
+      - /home/zhangshuai/project/php:/var/www/php
     working_dir: /var/www/php
     ports:
       - "9501:9501"
