@@ -1,0 +1,59 @@
+version: '3.0'
+services:
+  # redis1配置
+  redis-node-1:
+    image: redis:6.0.8
+    container_name: redis-1
+    restart: always
+    network_mode: "host"
+    volumes:
+      - /tmp/redis/share/redis-node-1:/data
+    command: [ "redis-server", "--cluster-enabled yes","--appendonly yes", "--port 6381" ]
+    # redis2配置
+  redis-node-2:
+    image: redis:6.0.8
+    container_name: redis-2
+    restart: always
+    network_mode: "host"
+    volumes:
+      - /tmp/redis/share/redis-node-2:/data
+    command: [ "redis-server", "--cluster-enabled yes","--appendonly yes", "--port 6382" ]
+    # redis3配置
+  redis-node-3:
+    image: redis:6.0.8
+    container_name: redis-3
+    restart: always
+    network_mode: "host"
+    volumes:
+      - /tmp/redis/share/redis-node-3:/data
+    command: [ "redis-server", "--cluster-enabled yes","--appendonly yes", "--port 6383" ]
+    # redis4配置
+  redis-node-4:
+    image: redis:6.0.8
+    container_name: redis-4
+    restart: always
+    network_mode: "host"
+    volumes:
+      - /tmp/redis/share/redis-node-4:/data
+    command: [ "redis-server", "--cluster-enabled yes","--appendonly yes", "--port 6384" ]
+    # redis5配置
+  redis-node-5:
+    image: redis:6.0.8
+    container_name: redis-5
+    restart: always
+    network_mode: "host"
+    volumes:
+      - /tmp/redis/share/redis-node-5:/data
+    command: [ "redis-server", "--cluster-enabled yes","--appendonly yes", "--port 6385" ]
+    # redis6配置
+  redis-node-6:
+    image: redis:6.0.8
+    container_name: redis-6
+    restart: always
+    network_mode: "host"
+    volumes:
+      - /tmp/redis/share/redis-node-6:/data
+    command: [ "redis-server", "--cluster-enabled yes","--appendonly yes", "--port 6386" ]
+
+
+
