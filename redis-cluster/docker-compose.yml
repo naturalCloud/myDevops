@@ -3,7 +3,7 @@ services:
   # redis1配置
   redis-node-1:
     image: redis:6.0.8
-    container_name: redis-1
+    container_name: redis-node-1
     restart: always
     network_mode: "host"
     volumes:
@@ -12,7 +12,7 @@ services:
     # redis2配置
   redis-node-2:
     image: redis:6.0.8
-    container_name: redis-2
+    container_name: redis-node-2
     restart: always
     network_mode: "host"
     volumes:
@@ -21,7 +21,7 @@ services:
     # redis3配置
   redis-node-3:
     image: redis:6.0.8
-    container_name: redis-3
+    container_name: redis-node-3
     restart: always
     network_mode: "host"
     volumes:
@@ -30,7 +30,7 @@ services:
     # redis4配置
   redis-node-4:
     image: redis:6.0.8
-    container_name: redis-4
+    container_name: redis-node-4
     restart: always
     network_mode: "host"
     volumes:
@@ -39,7 +39,7 @@ services:
     # redis5配置
   redis-node-5:
     image: redis:6.0.8
-    container_name: redis-5
+    container_name: redis-node-5
     restart: always
     network_mode: "host"
     volumes:
@@ -48,7 +48,7 @@ services:
     # redis6配置
   redis-node-6:
     image: redis:6.0.8
-    container_name: redis-6
+    container_name: redis-node
     restart: always
     network_mode: "host"
     volumes:
