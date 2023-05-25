@@ -1,0 +1,10 @@
+version: '3.0'
+services:
+  nginx-php:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        PhpVersion: $PhpVersion
+
+    container_name:  php74-demo

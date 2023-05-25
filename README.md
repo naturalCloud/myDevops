@@ -8,6 +8,7 @@
 * [sftp-server](sftp-server)
 * [easyswoole](easyswool)
 * [goService](goService)
+* [nginx+php](nginxphp)
 
   
 ## 容器更换外国源
