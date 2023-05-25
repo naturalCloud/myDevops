@@ -48,7 +48,7 @@ services:
     # redis6配置
   redis-node-6:
     image: redis:6.0.8
-    container_name: redis-node
+    container_name: redis-node-6
     restart: always
     network_mode: "host"
     volumes:
