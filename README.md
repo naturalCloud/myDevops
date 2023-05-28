@@ -9,6 +9,8 @@
 * [easyswoole](easyswool)
 * [goService](goService)
 * [nginx+php](nginxphp)
+* [redis集群](redis-cluster)
+* [canal](canal)
 
   
 ## 容器更换外国源
